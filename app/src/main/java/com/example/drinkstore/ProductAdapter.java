@@ -15,9 +15,19 @@ import java.util.List;
 public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHolder> {
 
     private List<Product> products;
+    private OnProductClickListener listener;
+
+    public interface OnProductClickListener {
+        void onProductClick(Product product);
+    }
 
     public ProductAdapter(List<Product> products) {
         this.products = products;
+    }
+
+    public ProductAdapter(List<Product> products, OnProductClickListener listener) {
+        this.products = products;
+        this.listener = listener;
     }
 
     @NonNull
@@ -38,7 +48,13 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ViewHold
         } else {
             holder.productImage.setImageResource(R.drawable.default_category);
         }
-        holder.productPrice.setText(String.format("%.2f",product.price));
+        holder.productPrice.setText(String.format("%.2f", product.price));
+
+        holder.itemView.setOnClickListener(v -> {
+            if (listener != null) {
+                listener.onProductClick(product);
+            }
+        });
     }
 
     @Override

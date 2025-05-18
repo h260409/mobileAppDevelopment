@@ -23,6 +23,9 @@
             android:name=".AdminPageActivity"
             android:exported="false"/>
         <activity
+            android:name=".CartActivity"
+            android:exported="false"/>
+        <activity
             android:name="com.example.drinkstore.LoginActivity"
             android:exported="false" />
         <activity

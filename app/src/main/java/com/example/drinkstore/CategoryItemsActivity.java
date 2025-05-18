@@ -4,6 +4,8 @@ package com.example.drinkstore;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -32,12 +34,17 @@ public class CategoryItemsActivity extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         List<Product> products = new ArrayList<>();
-        ProductAdapter adapter = new ProductAdapter(products);
+
+        ProductAdapter adapter = new ProductAdapter(products, product -> {
+            CartManager.getInstance().addToCart(product);
+            Toast.makeText(this, product.getName() + " hozzáadva a kosárhoz!", Toast.LENGTH_SHORT).show();
+        });
+
         recyclerView.setAdapter(adapter);
 
+        db = FirebaseFirestore.getInstance();
+        items = db.collection("Products");
 
-        db=FirebaseFirestore.getInstance();
-        items= db.collection("Products");
         ProductFetcher fetcher = new ProductFetcher();
         fetcher.fetchProductsByCategoryOrdered(category, new ProductCallback() {
             @Override
@@ -45,10 +52,11 @@ public class CategoryItemsActivity extends AppCompatActivity {
                 products.clear();
                 products.addAll(fetchedProducts);
 
-                runOnUiThread(() -> adapter.notifyDataSetChanged());
+                runOnUiThread(adapter::notifyDataSetChanged);
             }
         });
     }
+
 
 
     public void cancel(View view) {

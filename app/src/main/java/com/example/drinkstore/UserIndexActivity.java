@@ -76,6 +76,11 @@ public class UserIndexActivity extends AppCompatActivity {
         }
     }
 
+    public void cart(View view){
+        Intent intent =new Intent(this,CartActivity.class);
+        startActivity(intent);
+    }
+
     private void insertShopContact() {
         ArrayList<ContentProviderOperation> ops = new ArrayList<>();
 
