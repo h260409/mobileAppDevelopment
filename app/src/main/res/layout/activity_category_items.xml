@@ -44,7 +44,7 @@
         android:id="@+id/backButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Back"
+        android:text="@string/back"
         android:textColor="#FFFFFF"
         android:onClick="cancel"
         android:backgroundTint="#2196F3"

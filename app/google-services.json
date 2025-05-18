@@ -1,10 +1,30 @@
 {
   "project_info": {
     "project_number": "551291048812",
+    "firebase_url": "https://mobil-64163-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "mobil-64163",
     "storage_bucket": "mobil-64163.firebasestorage.app"
   },
   "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:551291048812:android:d72f1cff3f471d88901949",
+        "android_client_info": {
+          "package_name": "com.example.drinkstore"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADbT4HTKu9yfMUfjLjeHTZq-YgiVe-VxM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
     {
       "client_info": {
         "mobilesdk_app_id": "1:551291048812:android:dc0d50c43261032e901949",

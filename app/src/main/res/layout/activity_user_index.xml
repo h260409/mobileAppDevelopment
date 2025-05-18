@@ -41,10 +41,12 @@
             android:id="@+id/categoryRecyclerView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="12dp"
             android:clipToPadding="false"
+            android:contentDescription="@string/drink_store"
+            android:padding="12dp"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="2" />
+
     </androidx.cardview.widget.CardView>
 
     <!-- Logout Button -->
@@ -67,5 +69,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:onClick="logout" />
+
+    <Button
+        android:id="@+id/contact_button"
+        android:layout_width="77dp"
+        android:layout_height="89dp"
+        android:onClick="saveShopContact"
+        android:text="@string/save_shop_contact"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="16dp"
+        tools:ignore="MissingConstraints" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

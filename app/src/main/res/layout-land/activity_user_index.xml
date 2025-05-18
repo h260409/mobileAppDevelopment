@@ -13,16 +13,16 @@
         android:id="@+id/mainActivityText"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="@string/drink_store"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#2C2C2C"
+        android:background="@drawable/header_background"
         android:gravity="center"
         android:padding="16dp"
-        android:background="@drawable/header_background"
-        app:layout_constraintTop_toTopOf="parent"
+        android:text="@string/drink_store"
+        android:textColor="#2C2C2C"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <!-- RecyclerView with more columns -->
     <androidx.cardview.widget.CardView
@@ -45,6 +45,7 @@
             android:clipToPadding="false"
             app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
             app:spanCount="4" />
+
     </androidx.cardview.widget.CardView>
 
     <!-- Logout Button -->
@@ -66,5 +67,16 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:onClick="logout" />
+
+    <Button
+        android:id="@+id/contact_button"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:onClick="saveShopContact"
+        android:text="@string/save_shop_contact"
+        app:layout_constraintTop_toTopOf="@+id/mainActivityText"
+        tools:layout_editor_absoluteX="16dp"
+        tools:ignore="MissingConstraints" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

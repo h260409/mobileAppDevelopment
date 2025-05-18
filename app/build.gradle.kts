@@ -1,18 +1,19 @@
 plugins {
-    id("com.android.application") version "8.8.1"
-    id("com.google.gms.google-services") version "4.4.2"
+    id("com.android.application")
+    id("com.google.gms.google-services")
 }
 
 android {
-    namespace = "com.example.mobil"
+    namespace = "com.example.drinkstore"
     compileSdk = 35
 
     defaultConfig {
-        applicationId = "com.example.mobil"
+        applicationId = "com.example.drinkstore"
         minSdk = 23
         targetSdk = 35
         versionCode = 1
         versionName = "1.0"
+        multiDexEnabled = true
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
@@ -47,10 +48,15 @@ dependencies {
     implementation(libs.lifecycle.livedata.ktx)
     implementation(libs.lifecycle.viewmodel.ktx)
     implementation(libs.firebase.auth)
+    implementation(libs.play.services.location)
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
     androidTestImplementation(libs.espresso.core)
     implementation(platform("com.google.firebase:firebase-bom:33.12.0"))
     implementation("com.google.firebase:firebase-auth")
     implementation("com.google.firebase:firebase-database")
+    implementation("com.google.firebase:firebase-firestore")
+    implementation("com.android.support:multidex:1.0.3")
+    implementation("com.google.android.gms:play-services-location:21.0.1")
+
 }
